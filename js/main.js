@@ -191,17 +191,17 @@ console.log('Остальные числа:', rest);
 
 
 // ===== 8.5. Практическое задание =====
-console.log('\n===== Практическое задание: Модуль math.js =====');
+// console.log('\n===== Практическое задание: Модуль math.js =====');
 
-import { square, cube, E } from "./math.js";
+// import { square, cube, E } from "./math.js";
 
-console.log('Функции из модуля math.js:');
-console.log('square(5) =', square(5));
-console.log('cube(3) =', cube(3));
-console.log('Значение E =', E);
-console.log('square(7) =', square(7));
-console.log('cube(4) =', cube(4));
-console.log('E * 2 =', E * 2);
+// console.log('Функции из модуля math.js:');
+// console.log('square(5) =', square(5));
+// console.log('cube(3) =', cube(3));
+// console.log('Значение E =', E);
+// console.log('square(7) =', square(7));
+// console.log('cube(4) =', cube(4));
+// console.log('E * 2 =', E * 2);
 
 
 
