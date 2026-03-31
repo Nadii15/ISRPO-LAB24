@@ -132,40 +132,76 @@ console.log('Остальные числа:', rest);
 
 
 // ===== 7.5. Практическое задание =====
-console.log('===== Практическое задание: Spread/Rest =====');
+// console.log('===== Практическое задание: Spread/Rest =====');
 
 
-const array1 = [5, 10, 15];
-const array2 = [20, 25, 30];
-console.log('Массив 1:', array1);
-console.log('Массив 2:', array2);
+// const array1 = [5, 10, 15];
+// const array2 = [20, 25, 30];
+// console.log('Массив 1:', array1);
+// console.log('Массив 2:', array2);
 
 
-const mergedArray = [...array1, ...array2];
-console.log('Объединённый массив:', mergedArray);
+// const mergedArray = [...array1, ...array2];
+// console.log('Объединённый массив:', mergedArray);
 
-function findMax(...numbers) {
-  return Math.max(...numbers);
-}
+// function findMax(...numbers) {
+//   return Math.max(...numbers);
+// }
 
-console.log('Максимум из 5, 10, 15:', findMax(5, 10, 15));
-console.log('Максимум из 100, 50, 75, 200:', findMax(100, 50, 75, 200));
-console.log('Максимум из объединённого массива:', findMax(...mergedArray));
+// console.log('Максимум из 5, 10, 15:', findMax(5, 10, 15));
+// console.log('Максимум из 100, 50, 75, 200:', findMax(100, 50, 75, 200));
+// console.log('Максимум из объединённого массива:', findMax(...mergedArray));
 
 
-const product = {
-  name: 'Смартфон',
-  price: 25000,
-  brand: 'Samsung'
-};
+// const product = {
+//   name: 'Смартфон',
+//   price: 25000,
+//   brand: 'Samsung'
+// };
 
-const specs = {
-  screen: '6.5"',
-  ram: '8GB',
-  storage: '128GB'
-};
+// const specs = {
+//   screen: '6.5"',
+//   ram: '8GB',
+//   storage: '128GB'
+// };
 
-const fullProduct = { ...product, ...specs };
-console.log('Объединённый объект продукта:', fullProduct);
+// const fullProduct = { ...product, ...specs };
+// console.log('Объединённый объект продукта:', fullProduct);
 
 //8
+
+// import { greet, add, PI } from "./utils.js";
+
+// console.log("Модули");
+// console.log(greet("Алексей"));
+// console.log("5 + 3 =", add(5, 3));
+// console.log("Значение PI:", PI);
+
+// import { multiply as умножить } from "./utils.js";
+// console.log("4 * 7 =", умножить(4, 7));
+
+// import * as Utils from "./utils.js";
+// console.log(Utils.greet("Мария"));
+// console.log("Умножение:", Utils.multiply(3, 9));
+
+// import sayHello from "./utils.js";
+// console.log(sayHello());
+
+
+
+
+// ===== 8.5. Практическое задание =====
+console.log('\n===== Практическое задание: Модуль math.js =====');
+
+import { square, cube, E } from "./math.js";
+
+console.log('Функции из модуля math.js:');
+console.log('square(5) =', square(5));
+console.log('cube(3) =', cube(3));
+console.log('Значение E =', E);
+console.log('square(7) =', square(7));
+console.log('cube(4) =', cube(4));
+console.log('E * 2 =', E * 2);
+
+
+
