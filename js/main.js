@@ -296,38 +296,97 @@ console.log('Остальные числа:', rest);
 
 
 //10.3
-function delay(ms, value) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(value);
-        }, ms);
-    });
-}
+// function delay(ms, value) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(value);
+//         }, ms);
+//     });
+// }
 
-async function processOrder(orderId) {
-    try {
-        console.log(` Обработка заказа #${orderId}...`);
+// async function processOrder(orderId) {
+//     try {
+//         console.log(` Обработка заказа #${orderId}...`);
 
 
-        const stockCheck = await delay(1000, "Товар в наличии");
-        console.log( stockCheck);
+//         const stockCheck = await delay(1000, "Товар в наличии");
+//         console.log( stockCheck);
 
       
-        const priceCalculation = await delay(800, "Стоимость: 2500 руб.");
-        console.log( priceCalculation);
+//         const priceCalculation = await delay(800, "Стоимость: 2500 руб.");
+//         console.log( priceCalculation);
 
      
-        const orderConfirmation = await delay(600, "Заказ подтверждён!");
-        console.log(orderConfirmation);
+//         const orderConfirmation = await delay(600, "Заказ подтверждён!");
+//         console.log(orderConfirmation);
 
-        console.log(` Заказ #${orderId} успешно обработан!`);
-        return `Заказ #${orderId} выполнен`;
+//         console.log(` Заказ #${orderId} успешно обработан!`);
+//         return `Заказ #${orderId} выполнен`;
 
-    } catch (error) {
-        console.error(" Ошибка при обработке заказа:", error);
-        throw error; 
-    }
-}
-processOrder(12345)
-    .then(result => console.log("Результат:", result))
-    .catch(err => console.log("Обработка завершена с ошибкой"));
+//     } catch (error) {
+//         console.error(" Ошибка при обработке заказа:", error);
+//         throw error; 
+//     }
+// }
+// processOrder(12345)
+//     .then(result => console.log("Результат:", result))
+//     .catch(err => console.log("Обработка завершена с ошибкой"));
+
+//11.2
+// console.log("Fetch API");
+
+// async function getUsers() {
+//     try {
+//         const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//         if (!response.ok) {
+//             throw new Error(`HTTP ошибка! Статус: ${response.status}`);
+//         }
+//         const users = await response.json();
+//         console.log("Первые 3 пользователя:");
+//         users.slice(0, 3).forEach((user) => {
+//             console.log(`- ${user.name} (${user.email})`);
+//         });
+//     } catch (error) {
+//         console.log("Ошибка при загрузке пользователей:", error.message);
+//     }
+// }
+// getUsers();
+
+// async function getUserById(id) {
+//     try {
+//         const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+//         const user = await response.json();
+//         console.log(`Пользователь #${id}:`);
+//         console.log(`Имя: ${user.name}`);
+//         console.log(`Город: ${user.address.city}`);
+//         console.log(`Компания: ${user.company.name}`);
+//     } catch (error) {
+//         console.log("Ошибка:", error.message);
+//     }
+// }
+// getUserById(1);
+
+// async function createPost() {
+//     try {
+//         const newPost = {
+//             title: "Моя первая запись",
+//             body: "Это содержание моей первой записи в блоге",
+//             userId: 1,
+//         };
+//         const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//             },
+//             body: JSON.stringify(newPost),
+//         });
+//         const createdPost = await response.json();
+//         console.log("Создана новая запись:");
+//         console.log("ID:", createdPost.id);
+//         console.log("Заголовок:", createdPost.title);
+//     } catch (error) {
+//         console.log("Ошибка при создании записи:", error.message);
+//     }
+// }
+// createPost();
+
