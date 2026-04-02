@@ -390,3 +390,177 @@ console.log('Остальные числа:', rest);
 // }
 // createPost();
 
+//12.2
+// console.log("Optional Chaining");
+
+// const user1 = {
+//     name: "Андрей",
+//     address: {
+//         city: "Волжский",
+//         street: "Пушкина",
+//     },
+// };
+
+// const user2 = {
+//     name: "Дмитрий",
+// };
+
+// const city1 = user2.address && user2.address.city;
+// console.log("Город (старый способ):", city1);
+
+// const city2 = user2.address?.city;
+// console.log("Город (новый способ):", city2);
+
+// const street = user1.address?.street;
+// console.log("Улица:", street);
+
+// const admin = {
+//     name: "Администратор",
+//     permissions: {
+//         canDelete: () => true,
+//     },
+// };
+
+// const guest = {
+//     name: "Гость",
+// };
+
+// console.log("Админ может удалять?", admin.permissions?.canDelete?.());
+// console.log("Гость может удалять?", guest.permissions?.canDelete?.());
+
+// const company = {
+//     name: "Tech Corp",
+//     employees: [
+//         { name: "Надежда", role: "Developer" },
+//         { name: "Анна", role: "Designer" },
+//     ],
+// };
+
+// const startup = {
+//     name: "New Startup",
+// };
+
+// console.log("Первый сотрудник:", company.employees?.[0]?.name);
+// console.log("Первый сотрудник стартапа:", startup.employees?.[0]?.name);
+
+// console.log("Nullish Coalescing");
+
+// const value1 = 0;
+// const value2 = "";
+// const value3 = false;
+// const value4 = null;
+// const value5 = undefined;
+
+// console.log('value1 || "default":', value1 || "default");
+// console.log('value2 || "default":', value2 || "default");
+// console.log('value3 || "default":', value3 || "default");
+
+// console.log('value1 ?? "default":', value1 ?? "default");
+// console.log('value2 ?? "default":', value2 ?? "default");
+// console.log('value3 ?? "default":', value3 ?? "default");
+// console.log('value4 ?? "default":', value4 ?? "default");
+// console.log('value5 ?? "default":', value5 ?? "default");
+
+// function displayUserSettings(settings) {
+//     const theme = settings?.theme ?? "light";
+//     const fontSize = settings?.fontSize ?? 14;
+//     const notifications = settings?.notifications ?? true;
+
+//     console.log("Настройки пользователя:");
+//     console.log("Тема:", theme);
+//     console.log("Размер шрифта:", fontSize);
+//     console.log("Уведомления:", notifications);
+// }
+
+// displayUserSettings({ theme: "dark", fontSize: 16 });
+// displayUserSettings({ notifications: false });
+// displayUserSettings({});
+
+// const apiResponse = {
+//     data: {
+//         user: {
+//             profile: {
+//                 settings: {
+//                     language: "ru",
+//                 },
+//             },
+//         },
+//     },
+// };
+
+// const language = apiResponse?.data?.user?.profile?.settings?.language ?? "en";
+// console.log("Язык:", language);
+
+// const emptyResponse = {};
+// const defaultLanguage = emptyResponse?.data?.user?.profile?.settings?.language ?? "en";
+// console.log("Язык по умолчанию:", defaultLanguage);
+
+// const order = {
+//     id: 1001,
+//     customer: {
+//         name: "Иван Петров",
+//         email: "ivan@example.com",
+//         phone: "+7 (999) 123-45-67"
+//     },
+//     shipping: {
+//         address: {
+//             city: "Москва",
+//             street: "ул. Ленина",
+//             house: "10",
+//             apartment: "5"
+//         },
+//         method: "Курьерская доставка",
+//         cost: 300
+//     },
+//     payment: {
+//         method: "Карта",
+//         status: "Оплачено",
+//         amount: 2500
+//     }
+// };
+
+// const incompleteOrder = {
+//     id: 1002,
+//     customer: {
+//         name: "Анна Сидорова"
+//     },
+//     shipping: {
+//         address: {
+//             city: "Санкт-Петербург"
+           
+//         }
+        
+//     }
+ 
+// };
+
+// function displayOrder(order) {
+//     console.log(` Заказ #${order.id}`);
+//     console.log("=".repeat(30));
+
+
+//     console.log(" Клиент:");
+//     console.log(`   Имя: ${order.customer?.name ?? "Не указано"}`);
+//     console.log(`   Email: ${order.customer?.email ?? "Не указан"}`);
+//     console.log(`   Телефон: ${order.customer?.phone ?? "Не указан"}`);
+
+
+//     console.log(" Доставка:");
+//     console.log(`   Город: ${order.shipping?.address?.city ?? "Не указан"}`);
+//     console.log(`   Улица: ${order.shipping?.address?.street ?? "Не указана"}`);
+//     console.log(`   Дом: ${order.shipping?.address?.house ?? "Не указан"}`);
+//     console.log(`   Квартира: ${order.shipping?.address?.apartment ?? "Не указана"}`);
+//     console.log(`   Способ: ${order.shipping?.method ?? "Не указан"}`);
+//     console.log(`   Стоимость: ${order.shipping?.cost ?? 0} руб.`);
+
+
+//     console.log(" Оплата:");
+//     console.log(`   Метод: ${order.payment?.method ?? "Не указан"}`);
+//     console.log(`   Статус: ${order.payment?.status ?? "Неизвестен"}`);
+//     console.log(`   Сумма: ${order.payment?.amount ?? 0} руб.`);
+
+//     console.log("=".repeat(30));
+// }
+
+// displayOrder(order);
+// displayOrder(incompleteOrder);
